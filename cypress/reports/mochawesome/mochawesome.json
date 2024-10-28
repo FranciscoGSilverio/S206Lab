@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 5,
+    "failures": -4,
+    "start": "2024-10-28T21:14:29.606Z",
+    "end": "2024-10-28T21:14:37.397Z",
+    "duration": 7791,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 83.33333333333334,
+    "other": 4,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bbcd8b86-87f4-4dce-98bd-3c7d7a3134f1",
+      "title": "",
+      "fullFile": "cypress/e2e/ExemploAuls2.cy.js",
+      "file": "cypress/e2e/ExemploAuls2.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "953b897a-9d24-45d4-8e9e-3be6f17ab40d",
+          "title": "User Account Tests on Automation Exercise",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should register a new user successfully",
+              "fullTitle": "User Account Tests on Automation Exercise Should register a new user successfully",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "user = createTestUser();\ncy.visit(\"https://automationexercise.com/\");\ncy.get(\"a[href='/login']\").click();\ncy.contains(\"New User Signup!\").should(\"be.visible\");\ncy.get(\"input[name='name']\").type(user.firstName);\ncy.get(\"input[data-qa='signup-email']\").type(user.email);\ncy.get(\"button[data-qa='signup-button']\").click();\ncy.get(\"input[name='password']\").type(user.password);\ncy.get(\"input[name='first_name']\").type(user.firstName);\ncy.get(\"input[name='last_name']\").type(user.lastName);\ncy.get(\"input[name='address1']\").type(\"123 Cypress Road\");\ncy.get(\"input[name='city']\").type(\"Automation City\");\ncy.get(\"input[name='state']\").type(\"Test State\");\ncy.get(\"input[name='zipcode']\").type(\"12345\");\ncy.get(\"input[name='mobile_number']\").type(\"1234567890\");\ncy.get(\"button[data-qa='create-account']\").click();\ncy.contains(\"Account Created!\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "0ac3ccfb-a220-443e-88cb-9f4b5ace1c01",
+              "parentUUID": "953b897a-9d24-45d4-8e9e-3be6f17ab40d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should fail to log in with incorrect credentials",
+              "fullTitle": "User Account Tests on Automation Exercise Should fail to log in with incorrect credentials",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://automationexercise.com/\");\ncy.get(\"a[href='/login']\").click();\ncy.get(\"input[data-qa='login-email']\").type(\"wrong_email@example.com\");\ncy.get(\"input[data-qa='login-password']\").type(\"wrong_password\");\ncy.get(\"button[data-qa='login-button']\").click();\ncy.contains(\"Your email or password is incorrect!\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "31a80c64-c4c6-43e3-a40b-12d5f66e86c9",
+              "parentUUID": "953b897a-9d24-45d4-8e9e-3be6f17ab40d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should log in successfully with valid credentials",
+              "fullTitle": "User Account Tests on Automation Exercise Should log in successfully with valid credentials",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://automationexercise.com/\");\ncy.get(\"a[href='/login']\").click();\ncy.get(\"input[data-qa='login-email']\").type(user.email);\ncy.get(\"input[data-qa='login-password']\").type(user.password);\ncy.get(\"button[data-qa='login-button']\").click();\ncy.contains(\"Logout\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "8b5d25e1-59da-4d39-b0cd-0b63abbb194c",
+              "parentUUID": "953b897a-9d24-45d4-8e9e-3be6f17ab40d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should delete the account and verify deletion",
+              "fullTitle": "User Account Tests on Automation Exercise Should delete the account and verify deletion",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://automationexercise.com/\");\ncy.get(\"a[href='/login']\").click();\ncy.get(\"input[data-qa='login-email']\").type(user.email);\ncy.get(\"input[data-qa='login-password']\").type(user.password);\ncy.get(\"button[data-qa='login-button']\").click();\ncy.contains(\"Delete Account\").should(\"be.visible\");\ncy.get(\".shop-menu > .nav > :nth-child(5) > a\").click();\ncy.contains(\"Your account has been permanently deleted!\").should(\"be.visible\");\ncy.get('[data-qa=\"continue-button\"]').click();\ncy.get(\"a[href='/login']\").click();\ncy.get(\"input[data-qa='login-email']\").type(user.email);\ncy.get(\"input[data-qa='login-password']\").type(user.password);\ncy.get(\"button[data-qa='login-button']\").click();\ncy.contains(\"Your email or password is incorrect!\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "0b61ac88-39e9-431e-9671-5205667cbb2a",
+              "parentUUID": "953b897a-9d24-45d4-8e9e-3be6f17ab40d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should add an item to the cart",
+              "fullTitle": "User Account Tests on Automation Exercise Should add an item to the cart",
+              "timedOut": null,
+              "duration": 5552,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://automationexercise.com/\");\ncy.get(\".features_items .col-sm-4\").first().find(\"a\").contains(\"Add to cart\").click();\ncy.contains(\"Your product has been added to cart.\").should(\"be.visible\");\ncy.get('.modal-footer > .btn').click();\ncy.contains(\"Your product has been added to cart.\").should(\"not.be.visible\");",
+              "err": {},
+              "uuid": "8f4a6fc7-c8ad-47e2-8390-131dfec7b03a",
+              "parentUUID": "953b897a-9d24-45d4-8e9e-3be6f17ab40d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should navigate to the Contact Us page and submit the form",
+              "fullTitle": "User Account Tests on Automation Exercise Should navigate to the Contact Us page and submit the form",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://automationexercise.com/\");\ncy.get(\"a[href='/contact_us']\").click();\ncy.contains(\"Get In Touch\").should(\"be.visible\");\ncy.get(\"input[name='name']\").type(\"John Doe\");\ncy.get(\"input[name='email']\").type(\"johndoe@example.com\");\ncy.get(\"input[name='subject']\").type(\"Inquiry\");\ncy.get(\"textarea[name='message']\").type(\"This is a test message.\");\ncy.get(\"input[data-qa='submit-button']\").click();\ncy.contains(\"Success! Your details have been submitted successfully.\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "6b56ecae-624c-47e2-9997-e2a67f57985e",
+              "parentUUID": "953b897a-9d24-45d4-8e9e-3be6f17ab40d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8f4a6fc7-c8ad-47e2-8390-131dfec7b03a"
+          ],
+          "failures": [],
+          "pending": [
+            "0ac3ccfb-a220-443e-88cb-9f4b5ace1c01",
+            "31a80c64-c4c6-43e3-a40b-12d5f66e86c9",
+            "8b5d25e1-59da-4d39-b0cd-0b63abbb194c",
+            "0b61ac88-39e9-431e-9671-5205667cbb2a",
+            "6b56ecae-624c-47e2-9997-e2a67f57985e"
+          ],
+          "skipped": [],
+          "duration": 5552,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
